@@ -16,11 +16,13 @@
 	<dependencies>
 
 		<!-- Dependencia do Framework do VRaptor -->
+		
 		<dependency>
 			<groupId>br.com.caelum</groupId>
 			<artifactId>vraptor</artifactId>
 			<version>4.1.4</version>
 		</dependency>
+
 
 		<!-- Dependencia Responsavel Por fornecer um
 		entitymanager injetado, e
@@ -83,11 +85,20 @@
 		</dependency>
 
 		<!-- Depenpencia plugin do postgressql 9.4 -->
+		<!--		
+		<dependency>
+			<groupId>org.postgresql</groupId>
+		<artifactId>postgresql</artifactId>
+			<version>9.4.1212</version>
+		</dependency>
+-->
+		<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
-			<version>9.4.1212</version>
+			<version>42.6.0</version>
 		</dependency>
+
 
 		<!-- ################# Para Geração de Tokens ################# -->
 		<dependency>
