@@ -9,6 +9,7 @@ import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
 import br.com.dankicommerce.model.Usuario;
+import br.com.olimposistema.aipa.dao.DAO;
 
 @Controller
 @Path("cadastrar")
@@ -18,6 +19,8 @@ public class CadastrarController {
 	EntityManager em;
 	@Inject
 	Result result;
+	@Inject 
+	DAO<Usuario> usuarioDao;
 	
 	@Get("")
 	public void cadastrar() {
@@ -25,7 +28,7 @@ public class CadastrarController {
 	
 	@Post("salvaUsuario")
 	public void salvaUsuario(Usuario usuario) {
-		em.persist(usuario);
+		usuarioDao.insert(usuario);
 		result.redirectTo(ProdutosController.class).produtos();
 	}
 }
