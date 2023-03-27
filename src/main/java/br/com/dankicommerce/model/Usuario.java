@@ -13,7 +13,7 @@ import br.com.olimposistema.aipa.model.Model;
 public class Usuario extends Model {
 	
 	@NotBlank
-	@Size(min = 3, max = 100)
+	@Size(min = 3, max = 100, message = "{usuario.nome.size}")
 	private String nome;
 	
 	@NotBlank

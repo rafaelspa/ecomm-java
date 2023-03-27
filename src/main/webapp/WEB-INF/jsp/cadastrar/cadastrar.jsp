@@ -65,24 +65,33 @@
 				<h3 class="section-subheading text-muted">Crie seu Cadastro
 					Gratuitamente</h3>
 			</div>
+
+			<c:if test="${not empty errors}">
+            	<div class="alert alert-danger" role="alert">
+					<c:forEach var="error" items="${errors}">
+                 		${error.message}<br />
+					</c:forEach>
+				</div>
+            </c:if>
+
 			<form method="post" action="<c:url value="cadastrar/salvaUsuario"/>">
 				<div class="row justify-content-md-center mb-5 text-center">
 					<div class="col-md-12 align-self-center text-center">
 						<div class="form-group input-login mx-auto">
-							<input name="usuario.nome" class="form-control" id="name" type="text"
-								placeholder="Nome *" required="required"
+							<input name="usuario.nome" class="form-control" id="name"
+								type="text" placeholder="Nome *" required="required"
 								data-validation-required-message="Please enter your email address." />
 							<p class="help-block text-danger"></p>
 						</div>
 						<div class="form-group input-login mx-auto">
-							<input name="usuario.email" class="form-control" id="email" type="email"
-								placeholder="Email *" required="required"
+							<input name="usuario.email" class="form-control" id="email"
+								type="email" placeholder="Email *" required="required"
 								data-validation-required-message="Please enter your email address." />
 							<p class="help-block text-danger"></p>
 						</div>
 						<div class="form-group input-login mx-auto">
-							<input name="usuario.senha" class="form-control" id="password" type="password"
-								placeholder="Senha *" required="required"
+							<input name="usuario.senha" class="form-control" id="password"
+								type="password" placeholder="Senha *" required="required"
 								data-validation-required-message="Insira sua senha." />
 							<p class="help-block text-danger"></p>
 						</div>
