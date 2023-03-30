@@ -21,6 +21,7 @@ public class Usuario extends Model {
 	private String email;
 	
 	@NotNull
+	@Size(min = 6, max = 20, message = "{usuario.senha.size}")
 	private String senha;
 	
 	public String getNome() {
