@@ -6,6 +6,7 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
 
 import br.com.olimposistema.aipa.model.Model;
 
@@ -13,14 +14,14 @@ import br.com.olimposistema.aipa.model.Model;
 public class Usuario extends Model {
 	
 	@NotBlank
+	@NotEmpty
 	@Size(min = 3, max = 100, message = "{usuario.nome.size}")
 	private String nome;
 	
-	@NotBlank
 	@Email
 	private String email;
 	
-	@NotNull
+	@NotBlank
 	@Size(min = 6, max = 20, message = "{usuario.senha.size}")
 	private String senha;
 	
