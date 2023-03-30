@@ -1,7 +1,7 @@
 package br.com.dankicommerce.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
@@ -19,6 +19,7 @@ public class Usuario extends Model {
 	private String nome;
 	
 	@Email
+	@Column(unique=true)
 	private String email;
 	
 	@NotBlank

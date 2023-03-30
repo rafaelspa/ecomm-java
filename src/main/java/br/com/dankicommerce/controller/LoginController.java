@@ -14,8 +14,8 @@ import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.interceptor.IncludeParameters;
 import br.com.caelum.vraptor.validator.SimpleMessage;
 import br.com.caelum.vraptor.validator.Validator;
+import br.com.dankicommerce.dao.usuarioDAO;
 import br.com.dankicommerce.model.Usuario;
-import br.com.olimposistema.aipa.dao.DAO;
 
 @Controller
 @Path("login")
@@ -26,7 +26,7 @@ public class LoginController {
 	@Inject
 	Validator validator;
 	@Inject
-	DAO<Usuario> usuarioDao; 
+	usuarioDAO usuarioDao; 
 	
 	@Get("")
 	public void login() {
